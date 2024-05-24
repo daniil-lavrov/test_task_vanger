@@ -53,9 +53,11 @@ body, html {
     text-align: center;
 }
 
-.container_1 {
+.container_main {
     display: flex;
+    justify-content: center;
     flex-direction: row;
+    width: 100%;
     height: 70%;
     margin-top: 7.5%;
 }
@@ -68,16 +70,9 @@ body, html {
 }
 
 .image_in_block {
+    margin-left: 10%;
     width: 65%;
     border-radius: 20px;
-}
-
-.container_blocks {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 50%;
-    height: auto;
 }
 
 .row {
@@ -89,12 +84,7 @@ body, html {
     width: 50%;
     display: flex;
     justify-content: center;
-}
-
-.container_in_col {
-    text-align: center;
-    position: relative;
-    margin-top: 20%;
+    flex-direction: column;
 }
 
 .block_img {
@@ -139,8 +129,6 @@ body, html {
 }
 
 .img_in_slider {
-    height: 380px;
-    width: 500px;
     margin: 0 auto;
     border-radius: 20px;
 }
@@ -153,7 +141,5 @@ body, html {
 }
 
 .img_in_nav {
-    height: 125px;
-    width: 125px;
     border-radius: 7px;
 }

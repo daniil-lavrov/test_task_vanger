@@ -1,4 +1,5 @@
 {% load static %}
+{% load thumbnail %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -27,42 +28,34 @@
         <div class="text">NASA (National Aeronautics and Space Administration) - это федеральное агентство США, ответственное за космические исследования, аэронавтику и аэрокосмические программы.
 Агентство NASA специализируется на создании и управлении космическими миссиями, включая отправку людей и механических аппаратов на орбиту и за пределы Земли.</div>
     </div>
-    <div class="container_1">
-        <div class="container_blocks">
+    <div class="container_main">
+        <div class="col">
             <div class="row">
                 <div class="col">
-                    <div class="container_in_col">
-                        <img src="{% static 'main/img/rocket-takeoff.svg' %}" alt="Логотип" class="block_img">
-                        <div class="space_between"></div>
-                        <span class="block_text">Спейс-шаттлы</span>
-                    </div>
+                    <img src="{% static 'main/img/rocket-takeoff.svg' %}" alt="Логотип" class="block_img">
+                    <div class="space_between"></div>
+                    <span class="block_text">Спейс-шаттлы</span>
                 </div>
                 <div class="col">
-                    <div class="container_in_col">
-                        <img src="{% static 'main/img/binoculars.svg' %}" alt="Логотип" class="block_img">
-                        <div class="space_between"></div>
-                        <span class="block_text">Телескопы</span>
-                    </div>
+                    <img src="{% static 'main/img/binoculars.svg' %}" alt="Логотип" class="block_img">
+                    <div class="space_between"></div>
+                    <span class="block_text">Телескопы</span>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="container_in_col">
-                        <img src="{% static 'main/img/moon-stars-fill.svg' %}" alt="Логотип" class="block_img">
-                        <div class="space_between"></div>
-                        <span class="block_text">Луна и Марс</span>
-                    </div>
+                    <img src="{% static 'main/img/moon-stars-fill.svg' %}" alt="Логотип" class="block_img">
+                    <div class="space_between"></div>
+                    <span class="block_text">Луна и Марс</span>
                 </div>
                 <div class="col">
-                    <div class="container_in_col">
-                        <img src="{% static 'main/img/stars.svg' %}" alt="Логотип" class="block_img">
-                        <div class="space_between"></div>
-                        <span class="block_text">Золотая медаль</span>
-                    </div>
+                    <img src="{% static 'main/img/stars.svg' %}" alt="Логотип" class="block_img">
+                    <div class="space_between"></div>
+                    <span class="block_text">Золотая медаль</span>
                 </div>
             </div>
         </div>
-        <div class="image-block">
+        <div class="col">
             <img src="{% static 'main/img/sky.jpg' %}" alt="Картинка" class="image_in_block">
         </div>
     </div>
@@ -75,14 +68,14 @@
         <div class="slider slider-for img_slider">
             {% for post in pictures %}
             <a href="{{ post.img.url }}" data-lightbox="pictures">
-                <div><img src="{{ post.img.url }}" class="img_in_slider"></div>
+                <div><img src="{{ post.img | thumbnail_url:'big_slider' }}" class="img_in_slider"></div>
             </a>
             {% endfor %}
         </div>
         <div class="nav-slider">
             <div class="slider slider-nav">
                 {% for post in pictures %}
-                <div><img src="{{ post.img.url }}" class="img_in_nav"></div>
+                <div><img src="{{ post.img | thumbnail_url:'small_slider' }}" class="img_in_nav"></div>
                 {% endfor %}
             </div>
         </div>
